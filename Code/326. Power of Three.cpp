@@ -1,17 +1,17 @@
 #include <iostream>
+#include <cmath>
 
 class Solution {
 public:
-	//使用loop的暴力解法
+	//If log10(n) / log10(3) returns an int 
+	//(more precisely, a double but has 0 after decimal point)
+	//then n is a power of 3
 	bool isPowerOfThree(int n) {
-		if(!n)
+		if(n <= 0)
 			return false;
-		while (n!=1)
-		{
-			if(n%3)
-				return false;
-			n = n/3;
-		}
-		return true;
+		if(n == int(pow(3.0,int((log10(double(n))/log10(3.0))))))
+			return true;
+		else
+			return false;
 	}
 };

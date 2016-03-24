@@ -13,37 +13,20 @@ public:
 		//exclude special case
 		if(!head)
 			return head;
+
+		ListNode *odd, *even, *evenHead;
+		odd = head;
+		even = head->next;
+		evenHead = even;
+		while((odd->next != NULL) && (even->next != NULL))
+		{
+			odd->next = odd->next->next;
+			odd = odd->next;
+			even->next = even->next->next;
+			even = even->next;
+		}
+		odd->next = evenHead;
 		
-		int count=0;
-		ListNode* cur = head;
-		while(cur)
-		{
-			count++;
-			cur = cur->next;
-		}
-		ListNode* lastOdd = head;
-		for(int i=1;i<=(count-1)/2;i++)
-			lastOdd = lastOdd -> next ->next;
-		ListNode *evenHead = NULL, *curEven;
-		cur = head;
-		for(int i=1;i<=count/2;i++)
-		{
-			if(!evenHead)
-			{
-				curEven = cur->next;
-				evenHead = curEven;
-			}else{
-				curEven->next = cur->next;
-				curEven = curEven->next;
-			}
-			if((i!=count/2)||(count%2!=0))
-			{
-				cur->next = cur->next->next;
-				cur = cur->next;
-			}
-			curEven->next = NULL;
-		}
-		lastOdd->next = evenHead;
 		return head;
     }
 };

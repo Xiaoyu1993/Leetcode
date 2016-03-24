@@ -1,40 +1,22 @@
 #include <iostream>
-#include "../../Code/328. Odd Even Linked List.cpp"
+#include "../../Code/326. Power of Three.cpp"
 #include <string>
 
 using namespace std;
 
 int main()
 {
-	ListNode* head = new ListNode(1);
-	ListNode* pre=head;
-
-	//input test
-	for(int i=2;i<=5;i++)
+	int number;
+	scanf("%d",&number);
+	while(number)
 	{
-		ListNode* node = new ListNode(i);
-		pre->next = node;
-		pre = node;
+		Solution s;
+		if(s.isPowerOfThree(number))
+			printf("Yes\n");
+		else
+			printf("No\n");
+		scanf("%d",&number);
 	}
-
-	ListNode* cur = head;
-	while(cur!=NULL)
-	{
-		printf("%d->",cur->val);
-		cur = cur->next;
-	}
-	printf("\n");
-
-	Solution s;
-	ListNode* newhead = s.oddEvenList(head);
-
-	cur=newhead;
-	while(cur!=NULL)
-	{
-		printf("%d->",cur->val);
-		cur = cur->next;
-	}
-	printf("\n");
 
 	system("pause");
 	return 0;

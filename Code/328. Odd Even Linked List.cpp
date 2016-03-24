@@ -18,6 +18,8 @@ public:
 		odd = head;
 		even = head->next;
 		evenHead = even;
+		
+		//make one odd list and one evenlist
 		while((odd->next != NULL) && (even->next != NULL))
 		{
 			odd->next = odd->next->next;

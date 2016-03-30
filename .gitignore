@@ -32,3 +32,5 @@
 *.ilk
 *.pdb
 *.idb
+*.sdf
+/*/TestProject/Debug/

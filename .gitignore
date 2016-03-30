@@ -33,4 +33,7 @@
 *.pdb
 *.idb
 *.sdf
+*.ncb
+*.suo
+*.user
 /*/TestProject/Debug/

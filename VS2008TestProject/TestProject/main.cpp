@@ -1,22 +1,16 @@
 #include <iostream>
-#include "../../Code/326. Power of Three.cpp"
+#include "../../Code/345. Reverse Vowels of a String.cpp"
 #include <string>
 
 using namespace std;
 
 int main()
 {
-	int number;
-	scanf("%d",&number);
-	while(number)
-	{
-		Solution s;
-		if(s.isPowerOfThree(number))
-			printf("Yes\n");
-		else
-			printf("No\n");
-		scanf("%d",&number);
-	}
+	string s = "aA";
+	//cout << s << endl;
+	Solution reverse;
+	s = reverse.reverseVowels(s);
+	cout << s << endl;
 
 	system("pause");
 	return 0;
